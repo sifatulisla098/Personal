@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My personal Website </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4f4f9;
+            --text-color: #333;
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --border-color: #ddd;
+            --card-bg: #fff;
+        }
+
+        body {
+            font-family: 'Noto Sans Bengali', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-top: 10px;
+            font-weight: 700;
+        }
+
+        .bio {
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+
+        /* নতুন ছোট বাটনের ডিজাইন */
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            color: #fff;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .social-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+        
+        .social-button svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        .facebook { background-color: #3b5998; }
+        .instagram { background-color: #E1306C; }
+        .email { background-color: #db4437; }
+
+        .article-section {
+            padding: 20px 0;
+        }
+
+        .article-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-card h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .article-date {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .article-content {
+            line-height: 1.7;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 20px;
+        }
+
+        /* Modal for displaying messages */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+        }
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .social-buttons {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Sifatul Islam jr.</h1>
+            <p class="bio">
+                I am a student of Gazipur Cantonment Board High School|| My Social Media link given below।
+            </p>
+            <!-- Social media buttons with icons -->
+            <div class="social-buttons">
+                <!-- Facebook button -->
+                <a href="https://www.facebook.com/share/1ZXzUAhwF8/" target="_blank" class="social-button facebook" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 6H17V3H14C11.2386 3 9 5.23858 9 8V11H6V14H9V21H12V14H15L16 11H12V8C12 6.89543 12.8954 6 14 6Z" fill="#fff"/>
+                    </svg>
+                </a>
+                
+                <!-- Instagram button -->
+                <a href="https://www.instagram.com/sifatul.islam.123?igsh=MXgxZzJyN2pxMGQ1cg==" target="_blank" class="social-button instagram" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.5 6.5C16.5 7.32843 15.8284 8 15 8C14.1716 8 13.5 7.32843 13.5 6.5C13.5 5.67157 14.1716 5 15 5C15.8284 5 16.5 5.67157 16.5 6.5Z" fill="#fff"/>
+                        <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="#fff"/>
+                        <path d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z" fill="#fff"/>
+                        <path d="M19.5 2C20.8807 2 22 3.11929 22 4.5V19.5C22 20.8807 20.8807 22 19.5 22H4.5C3.11929 22 2 20.8807 2 19.5V4.5C2 3.11929 3.11929 2 4.5 2H19.5ZM19.5 4H4.5C4.22386 4 4 4.22386 4 4.5V19.5C4 19.7761 4.22386 20 4.5 20H19.5C19.7761 20 20 19.7761 20 19.5V4.5C20 4.22386 19.7761 4 19.5 4Z" fill="#fff"/>
+                    </svg>
+                </a>
+                
+                <!-- Email button -->
+                <a href="mailto:islamsifatul032@gmail.com" class="social-button email" aria-label="Email">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 6C4 4.89543 4.89543 4 6 4H18C19.1046 4 20 4.89543 20 6V18C20 19.1046 19.1046 20 18 20H6C4.89543 20 4 19.1046 4 18V6ZM6 6V18H18L18 6H6ZM7 7.5L12 11.5L17 7.5V8.5L12 12.5L7 8.5V7.5Z" fill="#fff"/>
+                    </svg>
+                </a>
+            </div>
+        </header>
+        
+        <main class="article-section">
+            <h2 id="about">About Mine</h2>
+            <div class="article-card">
+                <div class="article-content">
+                    <p>
+                        I am a Simple boy and believe it No attitude No emotion And No jealous 🫰
+                    </p>
+                </div>
+            </div>
+
+            <h2>Mine wishes and Dream</h2>
+            <!-- প্রথম আর্টিকেল -->
+            <div class="article-card">
+                <h2>Mine Skill</h2>
+                <div class="article-date"></div>
+                <div class="article-content">
+                    <p>
+                        Mine Skill is very difficult cause I went my future about singing a song I am daily practice New Song and develop my Skill my tune is god gifted So,My aim is such a vocalist or Singer
+                    </p>
+                    <p>
+                        
+                    </p>
+                </div>
+            </div>
+
+            <!-- দ্বিতীয় আর্টিকেল -->
+            <div class="article-card">
+                <h2>My Favourite Thinks </h2>
+                <div class="article-date"></div>
+                <div class="article-content">
+                    <p>
+                        My Favourite fast Food is jhalmuri and chotpoti.My wishes are very crazy.If I get Aladin cherag and My wishes is I am so reach in the  world than any other people 
+                    </p>
+                    <p>
+                        And My last wish is I will marry a cute girls and the girl is so loyal 🤣 What do you think so!🤴
+                    </p>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy;Sifatul Islam.Copyright All reserved ।</p>
+    </footer>
+
+    <!-- কাস্টম মডেলের কাঠামো -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <p id="modal-message"></p>
+        </div>
+    </div>
+
+    <script>
+        // জাভাস্ক্রিপ্ট কোড
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('myModal');
+            const modalMessage = document.getElementById('modal-message');
+            const modalClose = document.querySelector('.modal-close');
+
+            function showModal(message) {
+                modalMessage.textContent = message;
+                modal.style.display = 'flex';
+            }
+
+            function closeModal() {
+                modal.style.display = 'none';
+            }
+
+            // মডেল বন্ধ করার জন্য ইভেন্ট লিসেনার
+            modalClose.addEventListener('click', closeModal);
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
